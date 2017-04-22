@@ -3,6 +3,12 @@
 
 {% block title %}推荐电影 {% endblock %}
 
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+      href="{{url_for('static',filename='css/front_index.css')}}">
+{% endblock %}
+
 {% block page_content %} 
 <div class = 'page-header' >
     <div class="post-list-container outer-border white-bg">
