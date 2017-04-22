@@ -12,5 +12,14 @@ def page_not_found(e):
 def user(name):
     return render_template('user.html',name = name)
 
+@app.route('/movies')
+def movies():
+    movies = []
+    for i in range(1, 10):
+        movies.append({
+            'movieName':'Last'
+        })
+    return render_template('movies.html',movies = movies)
+
 if __name__ == '__main__':
-    app.run(port=5001,debug=True)
+    app.run(port=5004,debug=True)

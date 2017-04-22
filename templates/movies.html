@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% block title %}推荐电影 {% endblock %}
+
+{% block page_content %} 
+<div class = 'page-header' >
+    <div class="post-list-container outer-border white-bg">
+            <div class="post-con">
+                <ul class="post-list">
+                     {% for movie in movies %}
+                        <li>
+                            <h1>{{ movie.movieName }}!</h1>  
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+ </div>
+{% endblock %}
