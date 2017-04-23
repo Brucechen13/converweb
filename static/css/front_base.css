@@ -1,3 +1,4 @@
+
 a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, cite, code, dd, del, details, dfn, div, dl, dt, em, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
     margin: 0;
     padding: 0;
@@ -68,7 +69,7 @@ body{
 }
 
 .lg-container{
-    width: 74%;
+    width: 84%;
     float: left;
 }
 
@@ -79,23 +80,20 @@ body{
 
 
 .post-list li{
-    padding-top: 16px;
+    padding-top: 20px;
 }
 
 .post-list li .post-list-img{
-    width: 50px;
     float: left;
 }
 
 .post-list-img img{
-    width: 50px;
-    height:50px;
-    border-radius: 50%;
+    max-width: 200px;
     display: block;
 }
 
 .post-list li .post-list-con{
-    margin-left: 60px;
+    margin-left: 220px;
 }
 
 .post-list-con .title{
@@ -108,7 +106,7 @@ body{
     white-space: nowrap;
     overflow: hidden;
     color: #333;
-    font-size: 16px;
+    font-size: 24px;
 }
 
 .title .title_name:hover{
@@ -128,3 +126,37 @@ body{
     color: #8c8c8c;
 }
 
+.post-list li .post-list-div{
+    margin-top: 22px;
+    padding-bottom: 11px;
+    border-bottom: 2px solid #e6e6ee;
+}
+
+.post-list-con .content{
+    margin-top: 10px;
+    width: 100%;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    overflow: hidden;
+    color: #111;
+    font-size: 14px;
+}
+
+
+.post-list-con .post-list-comment{
+    margin-top: 20px;
+}
+.post-list-comment .comment{
+    line-height: 18px;
+    margin: 6px 0 0;
+    padding-bottom: 11px;
+    border-bottom: 1px solid #e6e6e6;
+    color: #8c8c8c;
+    font-size: 12px;
+}
+.comment .auth-com{
+    color: #666699;
+}
+.comment .comm-msg{
+    font-size: 12px;
+}

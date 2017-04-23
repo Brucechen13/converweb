@@ -7,16 +7,48 @@
 {{super()}}
 <link rel="stylesheet"
       href="{{url_for('static',filename='css/front_index.css')}}">
+<link rel="stylesheet"
+      href="{{url_for('static',filename='css/front_base.css')}}">
 {% endblock %}
 
 {% block page_content %} 
-<div class = 'page-header' >
+<div class = 'lg-container' >
     <div class="post-list-container outer-border white-bg">
-            <div class="post-con">
+            <div class="post-con" >
                 <ul class="post-list">
                      {% for movie in movies %}
-                        <li>
-                            <h1>{{ movie.movieName }}!</h1>  
+                        <li >
+                            <div class="post-list-img" style="overflow:auto">
+                                <a href="{{movie.url}}">
+                                    <img  src="{{movie.pic}}" alt="liteyou">
+                                </a>
+                            </div>
+                            <div class="post-list-con">
+                                <div class="title">
+                                    <a class="title_name" href="{{movie.url}}">
+                                        {{movie.title}}
+                                    </a>
+                                </div>
+                                <div class="auth-msg">
+                                    <span class="time">类型：{{movie.type}}</span>
+                                    <span class="star-count">评分：{{movie.star}}</span>
+                                </div>
+                                <div class = "content">
+                                    <p>{{movie.intro}}</p>
+                                </div>
+                                <div class = "post-list-comment">
+                                    {% for comm in movie.comments %}
+                                    <div class = "comment">
+                                        <div class="auth-com">
+                                            <span class="time">评论：{{comm.auth}}</span>
+                                        </div>
+                                        <div class="comm-msg">
+                                            <p>{{comm.msg}}</p>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
                         </li>
                     {% endfor %}
                 </ul>

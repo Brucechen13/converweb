@@ -57,7 +57,7 @@
 .post-list-container .post-con .post-list .post-list-con .auth-msg{
     cursor: default;
 }
-.auth-msg .user_name,.time,.comment-count,.read-count{
+.auth-msg .user_name,.time,.comment-count,.star-count{
     margin-right: 5px;
 }
 
