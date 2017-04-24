@@ -1,6 +1,6 @@
 from flask import Flask,render_template,url_for
 from flask.ext.bootstrap import Bootstrap
-from movieSpide import getMusic
+from movieSpide import getMovie
 
 app = Flask(__name__)
 bootstrap = Bootstrap(app)
@@ -19,5 +19,5 @@ def movies():
     return render_template('movies.html',movies = movies)
 
 if __name__ == '__main__':
-    movies = getMusic() 
-    app.run(port=5002,debug=True)
+    movies = getMovie() 
+    app.run(port=5002,debug=True) 

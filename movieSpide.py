@@ -3,7 +3,7 @@ from lxml import etree
 
 moviesUrl=['https://movie.douban.com/chart','https://movie.douban.com/top250']
 
-def getMusic():
+def getMovie():
     return get_html(moviesUrl[0])
 
 def get_html(url):
