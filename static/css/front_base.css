@@ -1,38 +1,7 @@
 
 
-.form-control:focus {
-  box-shadow: none;
-  border-color: #ccc;
-}
-
-.form-control{
-    box-shadow: none;
-}
-
-.captcha-img{
-    width: 80px;
-    height:30px;
-}
-
-.captcha-addon{
-    padding: 0;
-    cursor: pointer;
-}
-
 a:hover{
     text-decoration: none;
-}
-
-.user-avatar{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    margin: 0 5px -5px -15px;
-    transition:transform 1s;
-}
-.user-avatar:hover{
-    transform: rotate(360deg);
-    border:1px solid #cf3;
 }
 
 .list-group-item.header{
@@ -136,6 +105,21 @@ a:hover{
     color: #8c8c8c;
     font-size: 12px;
 }
+
+.post-list-comment .comment-img{
+    float: left;
+}
+
+.post-list-comment .comment-con{
+    margin-left: 40px;
+}
+
+.comment-img img{
+    max-width: 30px;
+    display: block;
+}
+
+
 .comment .auth-com{
     color: #666699;
 }

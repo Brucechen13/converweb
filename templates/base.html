@@ -1,6 +1,10 @@
 {% extends "bootstrap/base.html" %}
-
 {% block title %}INTERESTS{% endblock %}
+
+{% block head %}
+{{super()}}
+<link rel="Shortcut Icon" href="{{url_for('static',filename='resource/ico.jpg')}}">
+{% endblock %}
 
 {% block navbar %}
 <div class="navbar navbar-inverse" role="navigation">

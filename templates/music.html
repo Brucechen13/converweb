@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 {% extends 'base.html' %}
 
-{% block title %}推荐电影 {% endblock %}
+{% block title %}推荐音乐 {% endblock %}
 
 {% block styles %}
 {{super()}}
@@ -16,34 +16,37 @@
     <div class="post-list-container outer-border white-bg">
             <div class="post-con" >
                 <ul class="post-list">
-                     {% for movie in movies %}
+                     {% for music in musics %}
                         <li >
                             <div class="post-list-img" style="overflow:auto">
-                                <a href="{{movie.url}}" target="_blank" >
-                                    <img  src="{{movie.pic}}" alt="liteyou">
+                                <a href="{{music.url}}" target="_blank" >
+                                    <img  src="{{music.picUrl}}" alt="liteyou">
                                 </a>
                             </div>
                             <div class="post-list-con">
                                 <div class="title">
-                                    <a class="title_name" href="{{movie.url}}" target="_blank" >
-                                        {{movie.title}}
+                                    <a class="title_name" href="{{music.url}}" target="_blank" >
+                                        {{music.title}}
                                     </a>
                                 </div>
                                 <div class="auth-msg">
-                                    <span class="time">类型：{{movie.type}}</span>
-                                    <span class="star-count">评分：{{movie.star}}</span>
+                                    <span class="time">歌手：{{music.auth}}</span>
+                                    <span class="star-count">专辑：{{music.album}}</span>
                                 </div>
                                 <div class = "content">
-                                    <p>{{movie.intro}}</p>
+                                    
                                 </div>
                                 <div class = "post-list-comment">
-                                    {% for comm in movie.comments %}
-                                    <div class = "comment">
+                                    {% for comm in music.comments %}
+                                    <div class = "comment-img">
+                                        <img  src="{{comm.userPic}}" alt="评论">
+                                    </div>
+                                    <div class = "comment comment-con">
                                         <div class="auth-com">
-                                            <span class="time">评论：{{comm.auth}}</span>
+                                            <span class="time">{{comm.userName}}</span>
                                         </div>
                                         <div class="comm-msg">
-                                            <p>{{comm.msg}}</p>
+                                            <p>{{comm.content}}</p>
                                         </div>
                                     </div>
                                     {% endfor %}

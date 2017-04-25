@@ -35,14 +35,15 @@ def get_html(url):
             res_detail = requests.get(basicUrl+music['url'] )
             if res_detail.status_code == 200:
                 doc_detail = etree.HTML(res_detail.text)
-                picUrl = doc_detail.xpath('//div[@class="u-cover u-cover-6 f-fl"]/img/@src')[0]
+                music['picUrl'] = doc_detail.xpath('//div[@class="u-cover u-cover-6 f-fl"]/img/@src')[0]
                 infos = doc_detail.xpath('//div[@class="cnt"]/p[@class="des s-fc4"]')
                 music['auth'] = infos[0].xpath('./span/@title')[0]
                 music['album'] = infos[1].xpath('./a/text()')[0]
             else:
                 pass
+            music['url'] = basicUrl+music['url']
             data.append(music)
-            print(music)
+            #print(music)
         return data
     else:
         pass
@@ -83,7 +84,7 @@ def get_comments(songId):
     data = {'params': encText, 'encSecKey': encSecKey}
     req = requests.post(url, headers=headers, data=data)#
     total = req.json()['hotComments']
-    for i in range(0, min(5, len(total))):
+    for i in range(0, min(2, len(total))):
         comm = {}
         comment  = total[i]
         comm['content'] = comment['content']
@@ -92,4 +93,4 @@ def get_comments(songId):
         comments.append(comm)
     return comments
     
-print(getMusic())
+#print(getMusic())

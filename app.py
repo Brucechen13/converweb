@@ -1,10 +1,11 @@
 from flask import Flask,render_template,url_for
 from flask.ext.bootstrap import Bootstrap
 from movieSpide import getMovie
+from musicSpide import getMusic
 
 app = Flask(__name__)
 bootstrap = Bootstrap(app)
-
+ 
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html')
@@ -18,6 +19,12 @@ def user(name):
 def movies():
     return render_template('movies.html',movies = movies)
 
+
+@app.route('/musics')
+def musics():
+    return render_template('music.html',musics = musics)
+
 if __name__ == '__main__':
     movies = getMovie() 
-    app.run(port=5002,debug=True) 
+    musics = getMusic() 
+    app.run(port=5002,debug=True)
