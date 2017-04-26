@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 {% extends 'base.html' %}
 
-{% block title %}看最新电影 {% endblock %}
+{% block title %}读经典好书 {% endblock %}
 
 {% block styles %}
 {{super()}}
@@ -16,28 +16,27 @@
     <div class="post-list-container outer-border white-bg">
             <div class="post-con" >
                 <ul class="post-list">
-                     {% for movie in movies %}
+                     {% for book in books %}
                         <li >
                             <div class="post-list-img" style="overflow:auto">
-                                <a href="{{movie.url}}" target="_blank" >
-                                    <img  src="{{movie.pic}}" alt="liteyou">
+                                <a href="{{book.url}}" target="_blank" >
+                                    <img  src="{{book.picUrl}}" alt="liteyou">
                                 </a>
                             </div>
                             <div class="post-list-con">
                                 <div class="title">
-                                    <a class="title_name" href="{{movie.url}}" target="_blank" >
-                                        {{movie.title}}
+                                    <a class="title_name" href="{{book.url}}" target="_blank" >
+                                        {{book.title}}
                                     </a>
                                 </div>
                                 <div class="auth-msg">
-                                    <span class="time">类型：{{movie.type}}</span>
-                                    <span class="star-count">评分：{{movie.star}}</span>
+                                    <span class="time">作者：{{book.auther}}</span>
                                 </div>
                                 <div class = "content">
-                                    <p>{{movie.intro}}</p>
+                                    {{book.intro}}
                                 </div>
                                 <div class = "post-list-comment">
-                                    {% for comm in movie.comments %}
+                                    {% for comm in book.comments %}
                                     <div class = "comment">
                                         <div class="auth-com">
                                             <span class="time">评论：{{comm.auth}}</span>
