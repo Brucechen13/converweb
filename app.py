@@ -3,6 +3,7 @@ from flask.ext.bootstrap import Bootstrap
 from movieSpide import getMovie
 from musicSpide import getMusic
 from novieSpide import getBooks
+from goodsSpide import getGoods
 
 app = Flask(__name__)
 bootstrap = Bootstrap(app)
@@ -14,6 +15,11 @@ def page_not_found(e):
 @app.route('/user/<name>')
 def user(name):
     return render_template('user.html',name = name)
+
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 
 @app.route('/movies')
@@ -29,8 +35,14 @@ def musics():
 def books():
     return render_template('books.html',books = books)
 
+
+@app.route('/goods')
+def goods():
+    return render_template('goods.html',goods = goods)
+
 if __name__ == '__main__':
     movies = getMovie() 
-    musics = getMusic() 
+    musics = getMusic()  
     books = getBooks()
+    goods = getGoods()
     app.run(port=5002,debug=True) 

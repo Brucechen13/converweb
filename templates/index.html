@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% block title %}兴趣使然 {% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+      href="{{url_for('static',filename='css/front_index.css')}}">
+<link rel="stylesheet"
+      href="{{url_for('static',filename='css/front_base.css')}}">
+{% endblock %}
+
+{% block page_content %} 
+<div class = 'lg-container' >
+    <div class="body-text outer-border white-bg">
+            读一本书，听一首歌，看一部电影，买一件喜欢的东西。
+            </br>
+            兴趣使然，让自己开心起来^-^
+        </div>
+ </div>
+{% endblock %}

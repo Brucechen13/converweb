@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% block title %}找超值好货 {% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+      href="{{url_for('static',filename='css/front_index.css')}}">
+<link rel="stylesheet"
+      href="{{url_for('static',filename='css/front_base.css')}}">
+{% endblock %}
+
+{% block page_content %} 
+<div class = 'lg-container' >
+    <div class="post-list-container outer-border white-bg">
+            <div class="post-con" >
+                <ul class="post-list">
+                     {% for good in goods %}
+                        <li >
+                            <div class="post-list-img" style="overflow:auto">
+                                <a href="{{good.url}}" target="_blank" >
+                                    <img  src="{{good.pic}}" alt="liteyou">
+                                </a>
+                            </div>
+                            <div class="post-list-con">
+                                <div class="title">
+                                    <a class="title_name" href="{{good.url}}" target="_blank" >
+                                        {{good.title}}
+                                    </a>
+                                </div>
+                                <div class="auth-msg">
+                                    <span class="time">价格：{{good.price}}</span>
+                                    <span class="star-count">商城：{{good.store}}</span>
+                                </div>
+                                <div class = "content">
+                                    <p>{{good.intro}}</p>
+                                </div>
+                                <div class = "post-list-comment">
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+ </div>
+{% endblock %}
